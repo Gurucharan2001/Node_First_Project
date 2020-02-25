@@ -1,1 +1,1 @@
-It is a console application using Node JS.It is my first project of Node JS.
+It is a console application of Node JS.

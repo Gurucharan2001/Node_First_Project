@@ -31,7 +31,7 @@ const saveNotes = (notes)=>{
     fs.writeFileSync("notes.json",dataJSON)
 }
 
-const loadNotes = function(){
+const loadNotes = ()=>{
     try{
         const dataBuffer = fs.readFileSync("notes.json")
         const dataStr = dataBuffer.toString()
@@ -63,9 +63,18 @@ const removeNotes = (title)=>{
     
 }
 
+//listing the notes!!!
+const listNotes = ()=>{
+    const notes = loadNotes()
+    console.log(chalk.inverse("Your's Notes are:"))
+    notes.forEach((note) => {
+        console.log(note.title)
+    })
+}
 
 module.exports = {
     getNotes:getNotes,
     addNotes:addNotes,
-    removeNotes:removeNotes
+    removeNotes:removeNotes,
+    listNotes:listNotes
 }
